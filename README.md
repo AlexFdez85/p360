@@ -106,10 +106,4 @@ _(Actualizado a mayo 2025; incluye módulo de Tickets completo, panel Operativ
 | **operativas**     | `operativas.php` | Crear, ver propios, comentar |
 | **compras**        | `compras.php` | Solo lee sus tickets y pedidos |
 
----
-Mantén este **README.md** al día cada vez que:
-* Añadas tablas o columnas.
-* Crees o renombres páginas en `dashboard/`.
-* Cambies la lógica de flujos (Roles, estados, prioridades).
 
-Así cualquier desarrollador podrá clonar el repo y comprender la estructura completa de Pinta360 en minutos.
