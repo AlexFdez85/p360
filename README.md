@@ -7,7 +7,7 @@ _(Actualizado a mayo 2025; incluye módulo de Tickets completo, panel Operativ
 /p360
 │
 ├── assets/
-│   ├── css/            ← Estilos globales (Tailwind + custom)
+│   ├── css/            ← `style.css` — hoja de estilo principal
 │   ├── images/         ← Logos, íconos, recursos estáticos
 │   └── js/             ← Scripts vanilla para interacciones menores
 │
@@ -73,7 +73,7 @@ _(Actualizado a mayo 2025; incluye módulo de Tickets completo, panel Operativ
 | **ticket_attachments** | (id, ticket_id, file_path, uploaded_at) |
 | **tickets_comments** | (id, ticket_id, **author**, comment, created) <!-- nota: tabla plural --> |
 
-> **Cambio clave**: se añadió el campo **`phone`** a `tickets` y se adoptó **`tickets_comments`** (plural), donde la columna `author` ahora almacena `users.name` (no `username`).
+> **Cambio clave**: se añadió la columna **`phone`** a `tickets` y se creó la tabla **`tickets_comments`** (plural), donde la columna `author` almacena ahora `users.name`.
 
 ---
 ## Flujo de Tickets
@@ -111,3 +111,5 @@ Mantén este **README.md** al día cada vez que:
 * Añadas tablas o columnas.
 * Crees o renombres páginas en `dashboard/`.
 * Cambies la lógica de flujos (Roles, estados, prioridades).
+
+Así cualquier desarrollador podrá clonar el repo y comprender la estructura completa de Pinta360 en minutos.
