@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'ffteqbal_p360_db');
 define('DB_USER', 'ffteqbal_ffteqball');
-define('DB_PASS', 'Petrolera85*');
+define('DB_PASS', 'xxxxxxxx');
 
 // Conecta con PDO
 try {
