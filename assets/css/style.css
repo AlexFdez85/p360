@@ -1,0 +1,299 @@
+/* assets/css/style.css */
+
+/*=================================
+  Paleta de colores
+=================================*/
+:root {
+  --color-bg: #f5f5f5;
+  --color-primary: #333;
+  --color-accent: #c00;
+  --color-light: #fff;
+  --color-text: #222;
+  --color-muted: #666;
+}
+
+/*=================================
+  Reset básico
+=================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*=================================
+  Tipografía y fondo
+=================================*/
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/*=================================
+  Enlaces y botones
+=================================*/
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+button:hover,
+.btn:hover {
+  background-color: #a00;
+}
+
+/*=================================
+  Header principal
+=================================*/
+.site-header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+.site-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.site-header__logo {
+  height: 60px;           /* Ajusta aquí si quieres un logo más grande */
+}
+.site-header__nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.site-header__link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.site-header__link:hover {
+  background-color: #e0e0e0;
+}
+.site-header__logout {
+  background-color: var(--color-accent);
+  border: 1px solid #900;
+  color: var(--color-light);
+}
+.site-header__logout:hover {
+  background-color: #e00;
+  border-color: #b00;
+}
+@media (max-width: 600px) {
+  .site-header__inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .site-header__nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+/*=================================
+  Footer
+=================================*/
+footer {
+  background-color: var(--color-light);
+  color: var(--color-muted);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/*=================================
+  Contenedores principales
+=================================*/
+.main,
+.login-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--color-light);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/*=================================
+  Tablas responsivas y “stacked cards”
+=================================*/
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.table-responsive th,
+.table-responsive td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+.table-responsive th {
+  background: #eee;
+  font-weight: 600;
+}
+.table-responsive tr:nth-child(even) {
+  background: #f9f9f9;
+}
+@media (max-width: 768px) {
+  .table-responsive thead { display: none; }
+  .table-responsive tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem;
+    background: #fff;
+  }
+  .table-responsive td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border: none;
+  }
+  .table-responsive td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    flex: 1;
+  }
+  .table-responsive td span {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+/*=================================
+  Badges de estado
+=================================*/
+.status-badge {
+  padding: 0.2em 0.6em;
+  border-radius: 0.3em;
+  color: #fff;
+  font-weight: bold;
+}
+.status-pedido    { background: #666;     }
+.status-facturado { background: #007bff;  }
+.status-pagado    { background: #28a745;  }
+.status-pendiente { background: #ffc107;  }
+.status-vencido   { background: #dc3545;  }
+
+/*=================================
+  Miniaturas e imágenes con GLightbox
+=================================*/
+.ticket-attachments,
+.attachments-grid {
+  margin: 1rem 0;
+}
+.ticket-attachments ul,
+.attachments-grid {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+}
+.ticket-attachments li,
+.attachments-grid img {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: zoom-in;
+  transition: transform 0.2s;
+}
+.ticket-attachments li:hover img,
+.attachments-grid img:hover {
+  transform: scale(1.05);
+}
+
+/*=================================
+  Hero de bienvenida (index.php)
+=================================*/
+.welcome-hero {
+  position: relative;
+  height: 100vh;
+  background: url('/p360/assets/images/hero-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.welcome-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  max-width: 90%;
+}
+.welcome-hero__logo {
+  max-width: 300px;           /* Antes 200px; ajusta para hacerlo más grande */
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.7));
+  background: rgba(255,255,255,0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+.welcome-hero__title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+.welcome-hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.btn--lg {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+}
+@media (max-width: 600px) {
+  .welcome-hero__title {
+    font-size: 1.8rem;
+  }
+  .welcome-hero__subtitle {
+    font-size: 1rem;
+  }
+  .btn--lg {
+    width: 100%;
+  }
+}
+
